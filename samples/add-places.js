@@ -62,10 +62,10 @@ angular.module('esri-map-example', ['esri.map', 'mgcrea.ngStrap'])
         }).then(function successCallback(response) {
           $scope.place.name = "";
           $scope.operationSuccess = true;
-          console.log("true");
+          
           setTimeout(function(){
             $scope.operationSuccess = false;
-            $scope.$apply(function(){console.log("false")});
+            
           },2000);
         });
       };
