@@ -10,25 +10,27 @@
 
         <!-- load Esri CSS -->
         <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
-
+        
+        <!-- load Sample CSS -->
         <link rel="stylesheet" href="add-places.css">
-
     </head>
+
     <body ng-controller="MapController">
         <div class="container">
-          <div class="row">
-            
+          
+          <div class="row">  
             <div class="col-md-12">
+              
               <h1>Add new places form</h1>
+              
               <div class="row">
-
                 <div class="col-md-6">
+                  
                   <h2>Details</h2>
                   <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Place name" ng-model="place.name">
                   </div>
-                  
 
                   <div class="form-group">
                     <label for="type">Food type:</label>
@@ -38,6 +40,7 @@
                       <option>Spanish</option>
                     </select>
                   </div>
+
                   <div class="form-group">
                     <label for="address">Address:</label> (move the map)
                     <input type="text" class="form-control" id="address" placeholder="Address" ng-model="place.address" readonly>
@@ -50,14 +53,17 @@
                     <p><strong>Address</strong>: {{place.address}}</p>
                     <p><strong>Lat, long</strong>: {{map.center.lat | number:3 }}, {{map.center.lng | number:3 }}</p>
                   </div>
+
                   <button class="btn btn-primary" ng-click="addPOI()">Send new place</button>
 
                   <div id="operationSuccess" ng-show="operationSuccess" class="animate-show animate-hide text-center alert alert-success">
                     New place added successfully
                   </div>
+
                 </div>
 
                 <div class="col-md-6">
+                  
                   <h2>Location</h2>
                   <!-- add map to page and bind to scope map parameters -->
                   <div style="position:relative">
@@ -67,6 +73,7 @@
         url="http://services.arcgis.com/Q6ZFRRvMTlsTTFuP/arcgis/rest/services/Places/FeatureServer/0"
                     </esri-map>
                   </div>
+
                 </div>
               </div>
           </div>
@@ -81,6 +88,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.5/angular-strap.tpl.min.js"></script>
         <!-- load angular-esri-map directives -->
         <script src="../lib/angular-esri-map.js"></script>
+        <!-- load sample code -->
         <script src="add-places.js"></script>
         <!-- run example app controller -->
         
