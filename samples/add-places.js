@@ -65,11 +65,25 @@ angular.module('esri-map-example', ['esri.map', 'mgcrea.ngStrap'])
           
           setTimeout(function(){
             $scope.operationSuccess = false;
-            
+            getData();
           },2000);
         });
       };
-       
+
+      var getData = function(){
+        $http({
+          method: 'GET',
+          url: 'http://services.arcgis.com/Q6ZFRRvMTlsTTFuP/arcgis/rest/services/Places/FeatureServer/0/query',
+          params: {
+            where: "1=1",
+            outFields: "*",
+            f: 'json'
+          }
+        }).then(function successCallback(response) {
+          $scope.features = response.data.features;
+        });
+      };
+      getData();
 
       var parseParams = function(obj) {
         var str = [];
