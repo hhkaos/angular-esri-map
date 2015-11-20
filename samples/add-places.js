@@ -1,5 +1,7 @@
 angular.module('esri-map-example', ['esri.map', 'mgcrea.ngStrap'])
   .controller('MapController', function ($scope, $http) {
+      
+      // Setup the initial stat
       $scope.map = {
           center: {
             lng: 13.416286,
